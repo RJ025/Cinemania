@@ -4,12 +4,20 @@ import {PiUserCircleLight} from "react-icons/pi"
 import {RiCloseFill} from "react-icons/ri"
 import { useDispatch, useSelector } from "react-redux"
 import { toggleMenu } from "../utils/menuSlice"
+import { useEffect, useState } from "react"
+import { YOUTUBE_SEARCH_API } from "../utils/constants"
 
 
 export const Header = () => {
 
+    const [searchQuery , setSearchQuery] = useState("");
+
     const dispatch = useDispatch();
     const isMenuOpen = useSelector(store => store.menu.isMenuOpen)
+
+    useEffect(()=>{
+
+    } , [searchQuery])
 
     const handleClick = () =>{
         dispatch(toggleMenu());
@@ -34,6 +42,8 @@ export const Header = () => {
                 className="px-1 py-1 sm:px-5 sm:w-1/2 border border-gray-400 p-2 rounded-l-full"
                 type="text"
                 placeholder="search"
+                value={searchQuery}
+                onChange={(e)=>setSearchQuery(e.target.value)}
             />
             <button className="border border-gray-400 px-1 py-1 sm:px-5 sm:py-2 rounded-r-full bg-gray-100"><AiOutlineSearch/></button>
         </div>
