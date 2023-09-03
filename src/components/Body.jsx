@@ -1,17 +1,13 @@
 import Sidebar from "./Sidebar"
-import VideoContainer from "./VideoContainer"
-import WatchVideo from "./WatchVideo"
 import { Outlet } from "react-router-dom"
+import VideoContainer from "./VideoContainer"
 
 const Body = () => {
-
-
 
   return (
     <div className="grid grid-flow-col">
         <Sidebar/>
-        <Outlet/>
-        {/* <VideoContainer/> */}
+        <VideoContainer/>
     </div>
   )
 }

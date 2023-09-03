@@ -4,24 +4,29 @@ import Header from './components/Header'
 import Body from './components/Body'
 import { Provider } from 'react-redux'
 import store from './utils/store'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import WatchVideo from './components/WatchVideo'
 import VideoContainer from './components/VideoContainer'
+import ResultVideoContainer from './components/ResultVideoContainer'
 
 
 const appRouter = createBrowserRouter([{
   path : "/" , 
-  element : <Body/> ,
+  element : <App/> ,
   children : [
     {
       path : "/" ,
-      element : <VideoContainer/>
+      element : <Body/>
     } ,
     {
       path : "/watch" ,
       element : <WatchVideo/>
+    } ,
+    {
+      path : "/result" , 
+      element : <ResultVideoContainer/>
     }
-  ]
+  ] 
 }])
 
 function App() {
@@ -29,12 +34,12 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        <Header/>
-        <RouterProvider router={appRouter}/> 
+          <Header/>
+          <Outlet/>
       </Provider>
             
     </>
   )
 }
 
-export default App
+export default appRouter
