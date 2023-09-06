@@ -14,11 +14,11 @@ const ResultVideoContainer = () => {
 
     useEffect(()=>{
         getVideos();
-
-        return ()=>{
-
-        }
-    } , [])
+        console.log("render");
+        // return ()=>{
+        //     setSearchParams(searchParams.get("search_query"))
+        // }
+    } , [params])
 
     const getVideos = async() => {
         const data = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=25&q=${params}&key=${API_KEY}`)

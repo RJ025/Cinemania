@@ -7,7 +7,7 @@ import {BiSolidVideos} from "react-icons/bi";
 import {MdLocalMovies} from "react-icons/md";
 import {MdWatchLater} from "react-icons/md";
 import { useSelector } from "react-redux";
-import store from "../utils/store";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
 
@@ -17,10 +17,10 @@ const Sidebar = () => {
 
     return (
         <div className="col-span-1 shadow-lg py-4 px-4 h-[100%] border-rose-500">
-            <div className="flex justify-between items-center gap-1/2 py-3 px-4 rounded-lg hover:bg-slate-200 cursor-pointer">
+            <Link to="/"><div className="flex justify-between items-center gap-1/2 py-3 px-4 rounded-lg hover:bg-slate-200 cursor-pointer">
                 <AiFillHome/>
                 <span >Home</span>
-            </div>
+            </div></Link>
             <div className="flex justify-between items-center  gap-1/2 py-3 px-4 rounded-lg hover:bg-slate-200 cursor-pointer">
                 <PiFilmReelBold/>
                 <span >Shorts</span>
