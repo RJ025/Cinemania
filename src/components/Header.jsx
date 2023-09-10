@@ -8,8 +8,6 @@ import { useEffect, useState } from "react"
 import { YOUTUBE_SEARCH_API } from "../utils/constants"
 import { Link } from "react-router-dom"
 import { storeCache } from "../utils/searchSlice"
-import store from "../utils/store"
-import { toggleTheme } from "../utils/themeSlice"
 import logo from "../assets/download__1_-removebg-preview.png"
 import { getAuth , onAuthStateChanged } from "firebase/auth"
 import { signInWithGoogle , gooleSignOut } from "../utils/firebase"
@@ -94,10 +92,6 @@ export const Header = () => {
         signInWithGoogle();
     }
 
-    const handleTheme = ()=>{
-        dispatch(toggleTheme())
-    }
-
   return (
     <div className={"grid grid-flow-col p-2 shadow-lg sm:p-1" + (isDarkTheme ? " bg-black" : "")}>
         <div className="flex col-span-1">
@@ -115,7 +109,7 @@ export const Header = () => {
             </Link>
         </div>
         <div className="flex  flex-col justify-start items-start  col-span-11 sm:col-span-11 ">
-            <div className="flex justify-center items-center col-span-11 w-full sm:col-span-11 sm:mr-6 sm:mt-5">
+            <form className="flex justify-center items-center col-span-11 w-full sm:col-span-11 sm:mr-6 sm:mt-5">
                 <input
                     className="px-1 py-1 sm:px-5 sm:w-1/2 border border-gray-400 p-2 rounded-l-full"
                     type="text"
@@ -125,8 +119,13 @@ export const Header = () => {
                     // onBlur={()=>setShowSearch(false)}
                     onFocus={()=>setShowSearch(true)}
                 />
-                <button className={"border border-gray-400 px-1 py-1 sm:px-5 sm:py-2 rounded-r-full bg-gray-100" + (isDarkTheme ? " bg-red-500" : "")}><AiOutlineSearch/></button>  
-            </div>
+                <div className={"border border-gray-400 px-1 py-1 sm:px-5 sm:py-2 rounded-r-full bg-gray-100" + (isDarkTheme ? " bg-red-500" : "")}>
+                    <Link to={"/result?search_query="+searchQuery} onClick={()=>setSearchQuery(res)}>
+                        <AiOutlineSearch />  
+                    </Link>
+                </div>
+                
+            </form>
             <div className=" bg-white fixed w-[220px] sm:w-[28rem] sm:left-[28rem] top-10 sm:top-16 shadow-lg rounded-lg border border-gray-100">
                 {searchQuery && <ul>
                     {searchResults.map((res)=>
