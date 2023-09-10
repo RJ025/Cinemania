@@ -5,44 +5,44 @@ import {IoIosArrowDown} from 'react-icons/io'
 
 const data = [
     {
-      name: "Akshay Saini",
+      name: "test_user",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "test_user",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [
         {
-          name: "Akshay Saini",
+          name: "test_user",
           text: "Lorem ipsum dolor sit amet, consectetur adip",
           replies: [],
         },
         {
-          name: "Akshay Saini",
+          name: "test_user",
           text: "Lorem ipsum dolor sit amet, consectetur adip",
           replies: [
             {
-              name: "Akshay Saini",
+              name: "test_user",
               text: "Lorem ipsum dolor sit amet, consectetur adip",
               replies: [
                 {
-                  name: "Akshay Saini",
+                  name: "test_user",
                   text: "Lorem ipsum dolor sit amet, consectetur adip",
                   replies: [
                     {
-                      name: "Akshay Saini",
+                      name: "test_user",
                       text: "Lorem ipsum dolor sit amet, consectetur adip",
                       replies: [
                         {
-                          name: "Akshay Saini",
+                          name: "test_user",
                           text: "Lorem ipsum dolor sit amet, consectetur adip",
                           replies: [],
                         },
                       ],
                     },
                     {
-                      name: "Akshay Saini",
+                      name: "test_user",
                       text: "Lorem ipsum dolor sit amet, consectetur adip",
                       replies: [],
                     },
@@ -55,22 +55,22 @@ const data = [
       ],
     },
     {
-      name: "Akshay Saini",
+      name: "test_user",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "test_user",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "test_user",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "test_user",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },

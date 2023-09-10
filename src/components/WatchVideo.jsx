@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { SINGLE_VIDEO_API } from '../utils/constants';
 import CommentContainer from './CommentContainer';
 import LiveChat from './LiveChat';
+import VideoContainer from './VideoContainer';
 
 const WatchVideo = () => {
 
@@ -40,6 +41,10 @@ const WatchVideo = () => {
         </div>
         <div className='mt-3 p-2 sm:w-3/4'>
             <CommentContainer/>
+            <div className=''>
+                 <VideoContainer/>
+            </div>
+           
         </div>
     </div>
   )

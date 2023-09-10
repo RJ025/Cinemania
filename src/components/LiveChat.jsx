@@ -21,7 +21,7 @@ const LiveChat = () => {
         text : makeRandomMessage(10)
       }))
       console.log("api polling")
-    } , 2000)
+    } , 200)
 
     return ()=>clearInterval(timer);
   } , [])
@@ -37,7 +37,7 @@ const LiveChat = () => {
 
   return (
     <div className='flex flex-col sm:w-1/4'>
-      <div className="sm:w-full mt-3 h-[400px] bg-slate-100 overflow-y-scroll">
+      <div className="sm:w-full mt-3 h-[400px] bg-slate-100 overflow-y-scroll flex flex-col-reverse">
           {messages.map((c)=>{
             return <ChatMessage name={c.name} text={c.text}/>
           })}
